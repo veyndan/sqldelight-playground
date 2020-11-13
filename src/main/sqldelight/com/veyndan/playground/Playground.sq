@@ -1,0 +1,18 @@
+import com.veyndan.playground.Age;
+
+CREATE TABLE IF NOT EXISTS children
+(
+    ageInMonths INT AS Age
+);
+
+CREATE TABLE IF NOT EXISTS adults
+(
+    ageInYears INT AS Age
+);
+
+ages:
+SELECT ageInMonths
+FROM children
+UNION
+SELECT ageInYears * 12
+FROM adults;
